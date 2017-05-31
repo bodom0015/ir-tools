@@ -3,9 +3,10 @@
     <modelVersion>4.0.0</modelVersion>
 	<groupId>edu.illinois.lis</groupId>
     <artifactId>ir-utils</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
+    <version>0.1.0</version>
     <name>IR Utils</name>
     <description>IR Utils</description>
+    <url>https://github.com/uiucGSLIS/ir-tools</url>
     <scm>
         <url>git@github.com:uiucGSLIS/ir-utils.git</url>
         <connection>scm:git:git:git@github.com:uiucGSLIS/ir-utils.git</connection>
@@ -20,6 +21,29 @@
       <skipTests>true</skipTests>
     </properties>
 
+   <developers>
+      <developer>
+        <name>Craig Willis</name>
+        <email>willis8@illinois.edu</email>
+        <organization>University of Illinois (iSchool)</organization>
+        <organizationUrl>https://github.com/uiucGSLIS</organizationUrl>
+      </developer>
+
+      <developer>
+        <name>Garrick Sherman</name>
+        <email>gsherma2@illinois.edu</email>
+        <organization>University of Illinois (iSchool)</organization>
+        <organizationUrl>https://github.com/uiucGSLIS</organizationUrl>
+      </developer>
+
+      <developer>
+        <name>Mike Lambert</name>
+        <email>lambert8@illinois.edu</email>
+        <organization>National Data Service</organization>
+        <organizationUrl>https://github.com/nds-org</organizationUrl>
+      </developer>
+    </developers>
+
     <distributionManagement>
       <snapshotRepository>
         <id>ossrh</id>
@@ -31,9 +55,21 @@
       </repository>
     </distributionManagement>
 
-
     <build>
         <plugins>
+
+          <!-- Maven JavaDoc Plugin -->
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <version>2.10.4</version>
+            <configuration>
+              <show>private</show>
+              <nohelp>true</nohelp>
+            </configuration>
+          </plugin>
+
+          <!-- Maven Release Plugin -->
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
              <artifactId>maven-release-plugin</artifactId>
@@ -45,7 +81,8 @@
              </configuration>
            </plugin>
 
-           <plugin>
+          <!-- Maven Release Plugin -->
+          <plugin>
               <groupId>org.apache.maven.plugins</groupId>
               <artifactId>maven-gpg-plugin</artifactId>
               <version>1.6</version>
@@ -60,6 +97,7 @@
               </executions>
             </plugin>
 
+          <!-- Maven Source Plugin -->
             <plugin>
               <groupId>org.apache.maven.plugins</groupId>
               <artifactId>maven-source-plugin</artifactId>
@@ -75,6 +113,7 @@
               </executions>
             </plugin>
 
+            <!-- Maven Assembly Plugin -->
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <configuration>
@@ -92,6 +131,8 @@
                     </execution>
                 </executions>
             </plugin>
+
+                <!-- Maven Surefire Plugin -->
                 <plugin>
                       <groupId>org.apache.maven.plugins</groupId>
                       <artifactId>maven-surefire-plugin</artifactId>
@@ -113,7 +154,9 @@
                 </configuration>
               </execution>
             </executions>
-          </plugin>            
+          </plugin>      
+
+                  <!-- Maven Compiler Plugin -->      
 		  <plugin>
 			  <groupId>org.apache.maven.plugins</groupId>
 			  <artifactId>maven-compiler-plugin</artifactId>
@@ -125,6 +168,8 @@
         </plugins>
         <pluginManagement>
           <plugins>
+
+            <!-- Maven Eclipse Connector -->
             <plugin>
               <groupId>org.eclipse.m2e</groupId>
               <artifactId>lifecycle-mapping</artifactId>
