@@ -34,7 +34,7 @@ public class Qrels {
 	private Map<String,Set<String>> rel;
 	
 	/**
-	 * A map of queryName to rel_docnos->rel_level map
+	 * A map of queryName to a mapping of rel_docnos to rel_level)
 	 */
 	private Map<String,Map<String, Integer>> relLevels;
 	
