@@ -48,8 +48,8 @@ public interface IndexWrapper {
 	
 	/**
 	 * Returns the text for the specified document id
-	 * @param docid
-	 * @return
+	 * @param docid Document ID
+	 * @return text
 	 */
 	public String getDocText(int docid);
 	
@@ -57,40 +57,43 @@ public interface IndexWrapper {
 	 * Returns an ordered list of terms in the document. 
 	 * Used by proximity-based models
 	 * 
-	 * @param docid
-	 * @return
+	 * @param docid Document ID
+	 * @return list of terms
 	 */
 	public List<String> getDocTerms (int docid);
 	
 	/**
-	 * Returns a map of docids -> df for the given term
-	 * @param term
-	 * @return
+	 * Returns a map of docids to df for the given term
+	 * @param term Term
+	 * @param docs Set of document IDs
+	 * @return Map of docids to frequency
 	 */
 	public Map<Integer, Integer> getDocsByTerm (String term, Set<Integer> docs);
 	
 	/**
 	 * Returns a boolean query for the specified GQuery
-	 * @param query
-	 * @return
+	 * @param query Query number
+	 * @param stopper stopper
+	 * @return boolean query
 	 */
 	public String toAndQuery(String query, Stopper stopper);
 	
 	/**
 	 * Returns an unordered window query for the specified GQuery
-	 * @param query
-	 * @param window
-	 * @return
+	 * @param query Query number
+	 * @param window window size
+	 * @param stopper stopper
+	 * @return boolean query
 	 */
     public String toWindowQuery(String query, int window, Stopper stopper);
     
     /**
      * Returns dependency model query
-     * @param query
-     * @param w1
-     * @param w2
-     * @param w3
-     * @return
+     * @param query Query number
+     * @param w1 weight
+     * @param w2 weight
+     * @param w3 weight
+     * @return SDM query
      */
     public String toDMQuery(String query, String type, double w1, double w2, double w3);
     

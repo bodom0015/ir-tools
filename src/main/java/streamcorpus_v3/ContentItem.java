@@ -76,13 +76,13 @@ public class ContentItem implements org.apache.thrift.TBase<ContentItem, Content
   /**
    * HTML-formatted version of raw with UTF8 encoding and no broken
    * tags.  All HTML-escaped characters are converted to their UTF8
-   * equivalents.  < > & are escaped.
+   * equivalents.  &lt; &gt;  &amp; are escaped.
    */
   public String clean_html; // optional
   /**
    * All tags stripped from clean_html and replaced with whitespace,
    * so they have the same byte offsets.  The only escaped characters
-   * are < > &, so that this can be treated as Character Data in XML:
+   * are  &lt;  &gt;  &amp;, so that this can be treated as Character Data in XML:
    * http://www.w3.org/TR/xml/#syntax
    * 
    * Again: must be UTF8
@@ -160,13 +160,13 @@ public class ContentItem implements org.apache.thrift.TBase<ContentItem, Content
     /**
      * HTML-formatted version of raw with UTF8 encoding and no broken
      * tags.  All HTML-escaped characters are converted to their UTF8
-     * equivalents.  < > & are escaped.
+     * equivalents.   &lt;  &gt;  &amp; are escaped.
      */
     CLEAN_HTML((short)4, "clean_html"),
     /**
      * All tags stripped from clean_html and replaced with whitespace,
      * so they have the same byte offsets.  The only escaped characters
-     * are < > &, so that this can be treated as Character Data in XML:
+     * are  &lt;  &gt;  &amp;, so that this can be treated as Character Data in XML:
      * http://www.w3.org/TR/xml/#syntax
      * 
      * Again: must be UTF8
@@ -674,7 +674,7 @@ public class ContentItem implements org.apache.thrift.TBase<ContentItem, Content
   /**
    * HTML-formatted version of raw with UTF8 encoding and no broken
    * tags.  All HTML-escaped characters are converted to their UTF8
-   * equivalents.  < > & are escaped.
+   * equivalents.   &lt;  &gt;  &amp; are escaped.
    */
   public String getClean_html() {
     return this.clean_html;
@@ -683,7 +683,7 @@ public class ContentItem implements org.apache.thrift.TBase<ContentItem, Content
   /**
    * HTML-formatted version of raw with UTF8 encoding and no broken
    * tags.  All HTML-escaped characters are converted to their UTF8
-   * equivalents.  < > & are escaped.
+   * equivalents.   &lt;  &gt;  &amp; are escaped.
    */
   public ContentItem setClean_html(String clean_html) {
     this.clean_html = clean_html;
@@ -708,7 +708,7 @@ public class ContentItem implements org.apache.thrift.TBase<ContentItem, Content
   /**
    * All tags stripped from clean_html and replaced with whitespace,
    * so they have the same byte offsets.  The only escaped characters
-   * are < > &, so that this can be treated as Character Data in XML:
+   * are  &lt;  &gt;  &amp;, so that this can be treated as Character Data in XML:
    * http://www.w3.org/TR/xml/#syntax
    * 
    * Again: must be UTF8
@@ -720,7 +720,7 @@ public class ContentItem implements org.apache.thrift.TBase<ContentItem, Content
   /**
    * All tags stripped from clean_html and replaced with whitespace,
    * so they have the same byte offsets.  The only escaped characters
-   * are < > &, so that this can be treated as Character Data in XML:
+   * are &lt; &gt; &amp;, so that this can be treated as Character Data in XML:
    * http://www.w3.org/TR/xml/#syntax
    * 
    * Again: must be UTF8

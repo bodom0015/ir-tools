@@ -96,7 +96,6 @@ public class FilterEvaluation {
 	 * calculate F1 for a particular query
 	 * @param queryName the TREC-assigned query ID
 	 * @return F1
-	 * @throws Exception 
 	 */
 	public double f1Query(String queryName) {
 
@@ -119,9 +118,8 @@ public class FilterEvaluation {
 	 * @param queryName the TREC-assigned query ID
 	 * @param beta Beta for weighting precision.  beta=1 yields F1 equivalence.
 	 * @return Fbeta
-	 * @throws Exception 
 	 */
-	public double f1Query(String queryName, double beta) throws Exception {
+	public double f1Query(String queryName, double beta) {
 
 		beta *= beta;
 		

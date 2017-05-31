@@ -57,7 +57,7 @@ public class TFWeights
         /**
          * convert.wt_tf.b
          * tfwt_binary
-         * @param fv
+         * @param fv feature vector
          */
         public void weight(FeatureVector fv) {
             Iterator<String> it = fv.iterator();
@@ -72,7 +72,7 @@ public class TFWeights
         /**
          * For each term, find the maximum frequency
          * Divide each term frequency by the maximum frequency
-         * @param fv
+         * @param fv feature vector
          */
         public void weight(FeatureVector fv) {
             Iterator<String> it = fv.iterator();

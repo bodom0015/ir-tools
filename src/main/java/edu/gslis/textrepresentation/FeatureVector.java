@@ -29,7 +29,7 @@ import edu.gslis.utils.Stopper;
 
 
 /**
- * Simple container mapping term->count pairs grabbed from an input text.
+ * Simple container mapping term-count pairs grabbed from an input text.
  * 
  * @author Miles Efron
  *

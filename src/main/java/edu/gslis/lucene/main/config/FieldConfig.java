@@ -2,8 +2,7 @@ package edu.gslis.lucene.main.config;
 
 /**
  * YAML configuration binding for a Lucene field. 
- * @see http://lucene.apache.org/core/4_0_0/core/org/apache/lucene/document/Field.html
- *
+ * http://lucene.apache.org/core/4_0_0/core/org/apache/lucene/document/Field.html
  */
 public class FieldConfig {
 

@@ -33,7 +33,6 @@ public class IndriDocument {
 	 * gets the parsed text of the document.  this is all nice and clean... exactly as indri stores it.
 	 * @param docID the indri-internal numeric ID of the document.  i.e. not its TREC-assigned DOCNO element
 	 * @return character String containing the full text of the document
-	 * @throws Exception
 	 */
 	public String getDocString(int docID)  {
 		StringBuilder b = new StringBuilder();
@@ -89,7 +88,6 @@ public class IndriDocument {
 	 * is exactly as it appears in the input file.
 	 * @param docID the indri-internal numeric ID of the document.  i.e. not its TREC-assigned DOCNO element
 	 * @return unparsed text of the document
-	 * @throws Exception
 	 */
 	public String getUnparsedText(int docID) {
 		String trecText = null;
@@ -108,7 +106,6 @@ public class IndriDocument {
 	 * gets the TREC-assigned docno element for the document with this indri docID, or null if docno element isn't present.
 	 * @param docID indri-internal numeric ID of the document.  i.e. not its TREC-assigned DOCNO element
 	 * @return trec DOCNO element, or null
-	 * @throws Exception
 	 */
 	public String getDocno(int docID) {
 		String docno = null;
@@ -126,7 +123,6 @@ public class IndriDocument {
 	 * gets the indri-assigned docID for the document with this TREC-assigned docno element.
 	 * @param docno TREC-assigned docno of the document. 
 	 * @return indri-assigned docID, or -1
-	 * @throws Exception
 	 */
 	public int getDocID(String docno) {
 		String[] docnos = {docno};

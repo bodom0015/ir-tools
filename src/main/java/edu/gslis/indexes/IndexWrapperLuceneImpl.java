@@ -129,6 +129,7 @@ public class IndexWrapperLuceneImpl implements IndexWrapper
 	 * Execute a query given a GQuery object
 	 * @param gquery GQuery object
 	 * @param count  Number of hits
+	 * @return SearchHits
 	 */
     public SearchHits runQuery(GQuery gquery, int count) {
         String queryString = getLuceneQueryString(gquery);
@@ -140,6 +141,7 @@ public class IndexWrapperLuceneImpl implements IndexWrapper
 	 * @param gquery GQuery object
 	 * @param fields Array of fields to search
 	 * @param count  Number of hits
+	 * @return SearchHits
 	 */
     public SearchHits runQuery(GQuery gquery, String[] fields, int count) {
     	String queryString = getLuceneQueryString(gquery);
@@ -148,7 +150,8 @@ public class IndexWrapperLuceneImpl implements IndexWrapper
     
     /**
      * Convert GQuery to Lucene query
-     * @param query        Query
+     * @param gquery        Query
+	 * @return Query string
      */
     public String getLuceneQueryString(GQuery gquery) {
     	StringBuilder queryString = new StringBuilder();
@@ -221,6 +224,7 @@ public class IndexWrapperLuceneImpl implements IndexWrapper
      * @param q   Query string
      * @param field  Field to be queried
      * @param count Number of hits
+	 * @return SearchHits
      */    
     public SearchHits runQuery(String q, String field, int count) {
         return runQuery(q, new String[] { field } , count);
@@ -231,6 +235,7 @@ public class IndexWrapperLuceneImpl implements IndexWrapper
      * @param q   Query string
      * @param field  Field to be queried
      * @param count Number of hits
+	 * @return SearchHits
      */
 	public SearchHits runQuery(String q, String[] field, int count) {
 				
@@ -279,7 +284,7 @@ public class IndexWrapperLuceneImpl implements IndexWrapper
 	/**
 	 * Set the field name used to store the document time.  Defaults
 	 * to "epoch".
-	 * @param timeFieldName
+	 * @param timeFieldName Name of the time field (e.g., epoch)
 	 */
 	public void setTimeFieldName(String timeFieldName) {
 	    logger.info("setting time to " + timeFieldName);
@@ -341,8 +346,8 @@ public class IndexWrapperLuceneImpl implements IndexWrapper
 	
 	/** 
 	 * Returns the total vocabulary size for the specified field
-	 * @param field
-	 * @return
+	 * @param field Field name
+	 * @return total size
 	 */
     public double termTypeCount(String field) {
         if (vocabularySize == -1) {
@@ -383,7 +388,7 @@ public class IndexWrapperLuceneImpl implements IndexWrapper
 	 * in the specified field.
 	 * @param term  Term
 	 * @param field Field
-	 * @return
+	 * @return Document frequency
 	 */
     public double docFreq(String term, String field) {
         try {
@@ -397,7 +402,8 @@ public class IndexWrapperLuceneImpl implements IndexWrapper
 	/**
 	 * Returns total term frequency in the specified field
 	 * @param term Term
-	 * @param tield Field name
+	 * @param field Field name
+	 * @return Term frequency
 	 */
 	public double termFreq(String term, String field) {
 		try {
@@ -438,7 +444,7 @@ public class IndexWrapperLuceneImpl implements IndexWrapper
 
 	/**
 	 * Returns a feature vector for the specified intermal document ID
-	 * @param docid    Lucene internal identifier
+	 * @param docID    Lucene internal identifier
 	 * @param stopper  Stopper
 	 */
     public FeatureVector getDocVector(int docID,  Stopper stopper) {
@@ -451,7 +457,7 @@ public class IndexWrapperLuceneImpl implements IndexWrapper
      * @param docID     Lucene internal identifier
      * @param field     Field   
      * @param stopper   Stopper
-     * @return
+     * @return Feature vector
      */
 	public FeatureVector getDocVector(int docID,  String field, Stopper stopper) {
 	   
@@ -501,8 +507,8 @@ public class IndexWrapperLuceneImpl implements IndexWrapper
 	
 	/**
 	 * Returns an ordered list of terms for the specified document
-	 * @param docID
-	 * @return
+	 * @param docID Document ID
+	 * @return List of terms
 	 */
     public List<String> getDocTerms(int docID) 
     {       
@@ -545,6 +551,7 @@ public class IndexWrapperLuceneImpl implements IndexWrapper
     /**
      * Recomposes the document text
      * @param docID    Lucene internal document identifier
+	 * @return Document text
      */
     public String getDocText(int docID) {
         StringBuffer text = new StringBuffer();
@@ -565,9 +572,9 @@ public class IndexWrapperLuceneImpl implements IndexWrapper
 
     /**
      * Recomposes the document text from term position information.
-     * @param docID
-     * @param field
-     * @return
+     * @param docID Document ID
+     * @param field Field name
+     * @return Document text
      */
 	   public String getDocText(int docID,  String field) {
 	       
@@ -604,6 +611,8 @@ public class IndexWrapperLuceneImpl implements IndexWrapper
 	
 	/**
 	 * Returns the internal document identifier given a docno
+	 * @param docno Docno
+	 * @return Document ID
 	 */
 	public int getDocId(String docno) {
 	    return getDocId(Indexer.FIELD_DOCNO, docno);
@@ -689,7 +698,7 @@ public class IndexWrapperLuceneImpl implements IndexWrapper
 
 	/**
 	 * Returns the document length. Note: this is stored in a custom field during indexing.
-	 * @param docid Lucene internal identifier
+	 * @param docID Lucene internal identifier
 	 * @see edu.gslis.lucene.main.LuceneBuildIndex
 	 */
 	public double getDocLength(int docID) {

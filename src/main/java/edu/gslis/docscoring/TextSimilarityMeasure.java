@@ -10,9 +10,10 @@ public class TextSimilarityMeasure {
 
 	/**
 	 * DANGER: assumes that both argument vectors have been L2 normalized!
-	 * @param x
-	 * @param y
-	 * @return
+	 * @param x feature vector
+	 * @param y feature vector
+	 * @param needNormalizing normalize
+	 * @return cosine
 	 */
 	public static double cosine(FeatureVector x, FeatureVector y, boolean needNormalizing) {
 

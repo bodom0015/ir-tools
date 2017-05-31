@@ -57,8 +57,8 @@ public class Qrels {
 	
 	/**
 	 * 
-	 * @param pathToQrelsFile
-	 * @param storeNonRel
+	 * @param pathToQrelsFile Path to qrels
+	 * @param storeNonRel Whether to store non-relevant judgments
 	 * @param minRel           what is the minimum score for "relevance"?  e.g. 1?  2?
 	 */
 	public Qrels(String pathToQrelsFile, boolean storeNonRel, int minRel) {
@@ -170,8 +170,8 @@ public class Qrels {
 
 	/**
 	 * Needed if we want ALL documents (relevant and non) in the pool for this query.
-	 * @param query
-	 * @return
+	 * @param query query number
+	 * @return set of docnos
 	 */
 	public Set<String> getPool(String query) {
 		if(!nonRel.containsKey(query) && !rel.containsKey(query)) {

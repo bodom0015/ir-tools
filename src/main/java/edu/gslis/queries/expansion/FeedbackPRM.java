@@ -15,14 +15,9 @@ import edu.gslis.utils.KeyValuePairs;
 
 
 /**
- * Positional relevance model
+ * Positional relevance model (Lv and Zhai 2010)
  * 
- * Lv, Y., & Zhai, C. (2010). Positional relevance model for pseudo-relevance feedback. 
- * SIGIR ’10, 579. doi:10.1145/1835449.1835546
- * 
- * Ported from:
- *  http://sifaka.cs.uiuc.edu/~ylv2/pub/prm/PositionalRelevanceModel.cpp
- *  
+ * Ported from: *  http://sifaka.cs.uiuc.edu/~ylv2/pub/prm/PositionalRelevanceModel.cpp
  */
 public class FeedbackPRM extends Feedback {
 	private double sigma = 10;

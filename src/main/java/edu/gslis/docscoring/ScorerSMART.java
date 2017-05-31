@@ -155,7 +155,6 @@ public class ScorerSMART extends QueryDocScorer
      * Given a document, for each query term,
      * calculate the document and query weight
      * and normalize
-     * @return
      */
     public double score(SearchHit doc) 
     {

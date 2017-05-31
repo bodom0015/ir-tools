@@ -27,6 +27,8 @@ public abstract class QueryDocScorer implements Scorer {
 	
 	/**
 	 * Optional for string-valued parameters
+	 * @param paramName parameter name
+	 * @param paramValue parameter value
 	 */
 	public void setParameter(String paramName, String paramValue) {}
 	

@@ -274,9 +274,9 @@ public class IndexWrapperIndriImpl implements IndexWrapper{
 	
 	/**
 	 * Return a single SearchHit for the specified docno
-	 * @param docno
-	 * @param stopper
-	 * @return
+	 * @param docno Document nubmer
+	 * @param stopper Stopper object
+	 * @return SearchHit
 	 */
    public SearchHit getSearchHit(String docno, Stopper stopper) {
        SearchHit hit = new SearchHit();

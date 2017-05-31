@@ -39,17 +39,6 @@ import edu.gslis.utils.Stopper;
 
 public class RunBM25 {
 	
-	/**
-	 * runs a basic test/train batch filter session
-	 * 
-	 * @param args[0] /path/to/json/param/file
-	 * @throws ClassNotFoundException 
-	 * @throws IllegalAccessException 
-	 * @throws InstantiationException 
-	 * @throws NoSuchFieldException 
-	 * @throws SecurityException 
-	 * @throws FileNotFoundException 
-	 */
 	public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, SecurityException, NoSuchFieldException, FileNotFoundException {
 		File paramFile = new File(args[0]);
 		if(!paramFile.exists()) {
