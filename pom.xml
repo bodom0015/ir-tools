@@ -67,6 +67,15 @@
               <show>private</show>
               <nohelp>true</nohelp>
             </configuration>
+            <executions>
+	      <execution>
+	        <id>attach-javadocs</id>
+	        <phase>package</phase>
+	        <goals>
+	          <goal>jar</goal>
+	        </goals>
+	      </execution>
+            </executions>
           </plugin>
 
           <!-- Maven Release Plugin -->
@@ -81,7 +90,7 @@
              </configuration>
            </plugin>
 
-          <!-- Maven Release Plugin -->
+          <!-- Maven GPG Plugin -->
           <plugin>
               <groupId>org.apache.maven.plugins</groupId>
               <artifactId>maven-gpg-plugin</artifactId>
@@ -97,7 +106,7 @@
               </executions>
             </plugin>
 
-          <!-- Maven Source Plugin -->
+          <!-- Maven Sources Plugin -->
             <plugin>
               <groupId>org.apache.maven.plugins</groupId>
               <artifactId>maven-source-plugin</artifactId>
@@ -105,9 +114,9 @@
               <executions>
                 <execution>
                   <id>attach-sources</id>
-                  <phase>verify</phase>
+                  <phase>package</phase>
                   <goals>
-                    <goal>jar-no-fork</goal>
+                    <goal>jar</goal>
                   </goals>
                 </execution>
               </executions>
